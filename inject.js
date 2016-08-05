@@ -5,7 +5,7 @@
 //alert($('body').find('.hero-content, .text-left').html());
 injectTools = {
     "alert": function () {
-        alert("inject alert");
+        alert("inject alert in " + location.href);
     },
     "function1": function() {
         console.log('function1');
