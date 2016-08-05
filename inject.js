@@ -15,7 +15,7 @@ injectTools = {
     "addShowSelectPathListener": function() {
         console.log("addShowSelectPathListener");
         $('body').click(function(event) {
-
+            var originNode = event.target;
             var pathlist = [];
             while (event.target.nodeName !== 'BODY') {
                 var htmlNode = event.target;
@@ -33,10 +33,10 @@ injectTools = {
             var selectQuery = "";
             for (var item in pathlist) {
                 if (pathlist[item].nodeName === 'body') {
-                    selectQuery += 'body' + " " + '> ';
+                    selectQuery += 'body';
                 } else {
                     if (pathlist[item].id !== ""){
-                        selectQuery += "#"+pathlist[item].id
+                        selectQuery += " " +  "> " + "#"+pathlist[item].id;
                     } else {
                         selectQuery += " " + "> " + pathlist[item].nodeName;
                         if (pathlist[item].className.length > 1){
@@ -44,17 +44,32 @@ injectTools = {
                                 if(pathlist[item].className[classItem] !== "")
                                 selectQuery += '.' + pathlist[item].className[classItem];
                             }
-                        } else {
+                        }
+                        else {
+                            if (pathlist[item].className[0] !== "")
                             selectQuery += '.' + pathlist[item].className[0];
                         }
                     }
 
                 }
             }
+            var index = false;
+            if ($(selectQuery).length === 1) {
+                alert(selectQuery + '\n\n' + $(selectQuery).text());
+            } else {
+
+                $(selectQuery).each(function(i) {
+                    if ($(selectQuery).get(i) == originNode) {
+                        index = i;
+                    }
+                })
+            }
+            if (index) {
+                alert(selectQuery + '\n\n ---result is an array should use eq('+ index+ ')----' + '\n\n' + $(selectQuery).eq(index).text());
+
+            }
 
 
-            alert(selectQuery);
-            alert($(selectQuery).text());
             return false;
         });
     },
