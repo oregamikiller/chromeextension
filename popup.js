@@ -37,9 +37,9 @@ function getCurrentTabUrl(callback) {
     //  callback(url);
     //});
     // file: "content.js"
-    chrome.tabs.executeScript(null,{file: 'jquery-3.1.0.min.js'},function() {
-        chrome.tabs.executeScript(null, { file: "inject.js" });
-    });
+    //chrome.tabs.executeScript(null,{file: 'jquery-3.1.0.min.js'},function() {
+    //    chrome.tabs.executeScript(null, { file: "inject.js" });
+    //});
 
   // Most methods of the Chrome extension APIs are asynchronous. This means that
   // you CANNOT do something like this:
