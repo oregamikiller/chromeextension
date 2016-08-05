@@ -1,0 +1,1 @@
+# This extension inject custom js function into webPage

@@ -2,7 +2,6 @@
  * Created by oregami on 16/8/5.
  */
 
-//alert($('body').find('.hero-content, .text-left').html());
 injectTools = {
     "alert": function () {
         alert("inject alert in " + location.href);
