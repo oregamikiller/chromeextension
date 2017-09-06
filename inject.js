@@ -2,12 +2,17 @@
  * Created by oregami on 16/8/5.
  */
 
-injectTools = {
+var injectTools = {
     "alert": function () {
         alert("inject alert in " + location.href);
     },
-    "function1": function() {
+    "autoTCE": function() {
         console.log('function1');
+        console.log($('span:contains("Next")'));
+        setInterval(function() {
+            $('span:contains("Next")').click();
+        }, 5000)
+
     },
     "function2": function() {
         console.log('function2');
@@ -78,6 +83,6 @@ injectTools = {
     }
 };
 
-exeFunctionByName = function exeFunctionByName(funcName) {
+var exeFunctionByName = function exeFunctionByName(funcName) {
     injectTools[funcName]();
 }
