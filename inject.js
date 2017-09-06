@@ -7,7 +7,7 @@ var injectTools = {
         alert("inject alert in " + location.href);
     },
     "autoTCE": function() {
-        console.log('function1');
+        console.log('autoTCE');
         console.log($('span:contains("Next")'));
         setInterval(function() {
             $('span:contains("Next")').click();
