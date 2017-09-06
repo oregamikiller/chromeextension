@@ -10,9 +10,10 @@ var injectTools = {
         console.log('autoTCE');
         console.log($('span:contains("Next")'));
         setInterval(function() {
+            $('span:contains("下一步")').click();
             $('span:contains("Next")').click();
+            console.log('clicked');
         }, 5000)
-
     },
     "function2": function() {
         console.log('function2');
