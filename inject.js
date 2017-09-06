@@ -11,6 +11,7 @@ var injectTools = {
         console.log($('span:contains("Next")'));
         setInterval(function() {
             $('span:contains("下一步")').click();
+            $('span:contains("完成")').click();
             $('span:contains("Next")').click();
             console.log('clicked');
         }, 5000)
